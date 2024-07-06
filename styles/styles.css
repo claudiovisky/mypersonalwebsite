@@ -1,14 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Open+Sans:wght@400;700&family=Orbitron:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Russo+One&family=Share+Tech+Mono&display=swap');
 
-#particles-js {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Garante que a animação fique atrás de tudo */
-  }
 
 /* 
 Fundo: Preto (#000000)
@@ -21,14 +14,10 @@ Bordas e Detalhes: Prata (#C0C0C0), Azul Royal (#4169E1)
     */
 
 
-.textosmenu {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1.2rem;
-    line-height: 1.6;
-    color: #D3D3D3;
-}
+
 
 body {
+    height: 100%;
     font-family: 'Orbitron', sans-serif;
     margin: 0;
     padding: 0;
@@ -39,12 +28,6 @@ body {
 }
 
 
-.container {
-    background: transparent;
-    padding: 20px;
-    text-align: center;
-    
-}
 
 img {
     max-width: 100%;
@@ -91,7 +74,7 @@ nav {
 
 nav .menu-item a:hover, nav .menu-item a:focus {
     font-size: 2rem;
-    color: #91ff00; /* Cor do texto */
+    color: #00ff44; /* Cor do texto */
     text-decoration: none;
     transition: font-size 0.3s ease-in-out;
 
@@ -114,8 +97,9 @@ nav .menu-item {
 }
 
 nav .menu-item a {
-    font-family: 'Audiowide', cursive;
-    color: #91ff00;
+    
+    font-family: "Russo One", sans-serif;
+    color: #00ff44;
     text-decoration: none;
     font-size: 1.5rem;
     font-weight: 500;
@@ -127,6 +111,7 @@ nav .menu-item:hover {
 }
 
 main {
+    min-height: calc(100vh - 50px);
     padding: 2rem 0;
     position: center;
     background: transparent;
@@ -147,7 +132,7 @@ section.active {
 }
 
 section h2 {
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'Audiowide', cursive;
     margin-top: 0;
     color: #ffee00;
     font-size: 1.8rem;
@@ -203,19 +188,88 @@ footer {
     background-color: transparent;
     color: white;
     text-align: center;
+    height: 50px;
+    width: 100%;
 }
+
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1000; /* Garante que a animação fique atrás de tudo */
+  }
 
 #pheader-menu {
     color: white;
+    font-family: "Share Tech Mono", monospace;
     font-size: 1.8rem;
 }
 
 #footer {
-    position: absolute;
+
     bottom: 0;
     width: 100%;
     height: 2.5rem;            /* Footer height */
   }
+
+
+.menuanimation {
+    position: relative; /* ou 'fixed', dependendo do contexto */
+    left: 50%; /* Centraliza horizontalmente em relação ao elemento pai */
+    transform: translateX(-50%); /* Ajusta a centralização horizontal */
+    display: flex;
+    align-items: center; /* Centraliza verticalmente o conteúdo interno */
+    justify-content: center; /* Centraliza horizontalmente o conteúdo interno */
+}
+
+  .href-link {
+    color: #00FFFF; /* Cor do texto */
+    text-decoration: none; /* Remove o sublinhado do link */
+    font-size: 18px; /* Tamanho da fonte */
+    display: inline-flex; /* Permite alinhar o ícone com o texto */
+    align-items: center; /* Centraliza o ícone com o texto verticalmente */
+}
+
+.href-link:hover {
+    color: #0366d6; /* Cor do texto ao passar o mouse */
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
+.href-link i {
+    margin-right: 8px; /* Espaço entre o ícone e o texto */
+    font-size: 24px; /* Tamanho do ícone */
+}
+
+  .container {
+    background: transparent;
+    padding: 20px;
+    text-align: center;
+    
+}
+
+  .textosmenu {
+    font-family: "Lato", sans-serif;
+    font-size: 1.2rem;
+    max-width: 60ch;
+    margin: 0 auto;
+    padding: 50px;
+    text-align: justify;
+    line-height: 1.5;
+    color: #D3D3D3;
+}
+
+.textosmenucenter {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2rem;
+    max-width: 60ch;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    line-height: 1.6;
+    color: #D3D3D3;
+}
 
 /* Floating Elements */
 .floating-elements {
@@ -237,6 +291,57 @@ footer {
     border-radius: 50%;
     animation: float 10s infinite ease-in-out;
 }
+
+.btn-github {
+    font-family: "Share Tech Mono", monospace;
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #00ff44;
+    font-size: 1.2rem;
+    text-decoration: none;
+    background-color: #000;
+    border-radius: 50px;
+    overflow: hidden;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .btn-github::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.15);
+    transition: width 0.4s, height 0.4s, top 0.4s, left 0.4s;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .btn-github:hover::before {
+    width: 0;
+    height: 0;
+    top: 50%;
+    left: 50%;
+  }
+  
+  .btn-github:hover {
+    background-color: #333;
+    transform: scale(1.05);
+  }
+  
+  .btn-github:active {
+    transform: scale(0.95);
+  }
+  
+  .btn-github:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+  
+
+
 
 @keyframes float {
     0% {

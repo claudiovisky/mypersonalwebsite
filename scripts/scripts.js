@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
     //Função para inicializar o Particles.js
 /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
     particlesJS.load('particles-js', 'json/particlesjs.json', function() {
-    console.log('callback - particles.js config loaded');
+    console.log('callback - particlesJS.js config loaded');
   });
 
     // Função para Inicializar o AOS
