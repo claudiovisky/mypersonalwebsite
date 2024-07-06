@@ -40,7 +40,8 @@ header {
     position: relative;
     width: 100%;
     top: 0;
-    z-index: 1000; /* Mantém o cabeçalho acima de outros elementos */
+    z-index: 1000;
+    /* Mantém o cabeçalho acima de outros elementos */
 }
 
 header .profile {
@@ -72,9 +73,11 @@ nav {
 }
 
 
-nav .menu-item a:hover, nav .menu-item a:focus {
+nav .menu-item a:hover,
+nav .menu-item a:focus {
     font-size: 2rem;
-    color: #00ff44; /* Cor do texto */
+    color: #00ff44;
+    /* Cor do texto */
     text-decoration: none;
     transition: font-size 0.3s ease-in-out;
 
@@ -88,7 +91,7 @@ nav .menu {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    
+
 }
 
 nav .menu-item {
@@ -97,7 +100,7 @@ nav .menu-item {
 }
 
 nav .menu-item a {
-    
+
     font-family: "Russo One", sans-serif;
     color: #00ff44;
     text-decoration: none;
@@ -111,24 +114,39 @@ nav .menu-item:hover {
 }
 
 main {
-    min-height: calc(100vh - 50px);
-    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    overflow: auto;
+    padding: 1rem 0;
     position: center;
     background: transparent;
 }
 
+main .menuanimation {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%) scale(0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -5cap;
+    margin-bottom: 0cap;
+}
 
 section {
-    display: none; /* Hide all sections by default */
+    display: none;
+    /* Hide all sections by default */
     margin: 2rem 0;
     padding: 2rem;
     background-color: transparent;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  Adiciona sombra ao elemento */
 }
 
 section.active {
-    display: block; /* Show the active section */
+    display: block;
+    /* Show the active section */
 }
 
 section h2 {
@@ -162,7 +180,8 @@ form label {
     margin-top: 1rem;
 }
 
-form input, form textarea {
+form input,
+form textarea {
     width: 100%;
     padding: 0.5rem;
     margin-top: 0.5rem;
@@ -198,8 +217,9 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1000; /* Garante que a animação fique atrás de tudo */
-  }
+    z-index: -1000;
+    /* Garante que a animação fique atrás de tudo */
+}
 
 #pheader-menu {
     color: white;
@@ -211,45 +231,58 @@ footer {
 
     bottom: 0;
     width: 100%;
-    height: 2.5rem;            /* Footer height */
-  }
-
-
-.menuanimation {
-    position: relative; /* ou 'fixed', dependendo do contexto */
-    left: 50%; /* Centraliza horizontalmente em relação ao elemento pai */
-    transform: translateX(-50%); /* Ajusta a centralização horizontal */
-    display: flex;
-    align-items: center; /* Centraliza verticalmente o conteúdo interno */
-    justify-content: center; /* Centraliza horizontalmente o conteúdo interno */
+    height: 2.5rem;
+    /* Footer height */
 }
 
-  .href-link {
-    color: #00FFFF; /* Cor do texto */
-    text-decoration: none; /* Remove o sublinhado do link */
-    font-size: 18px; /* Tamanho da fonte */
-    display: inline-flex; /* Permite alinhar o ícone com o texto */
-    align-items: center; /* Centraliza o ícone com o texto verticalmente */
+
+
+.href-link {
+    color: #00FFFF;
+    /* Cor do texto */
+    text-decoration: none;
+    /* Remove o sublinhado do link */
+    font-size: 1.5rem;
+    /* Tamanho da fonte */
+    display: inline-flex;
+    /* Permite alinhar o ícone com o texto */
+    align-items: center;
+    /* Centraliza o ícone com o texto verticalmente */
 }
 
 .href-link:hover {
-    color: #0366d6; /* Cor do texto ao passar o mouse */
-    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+    color: #0366d6;
+    /* Cor do texto ao passar o mouse */
+    text-decoration: underline;
+    /* Adiciona sublinhado ao passar o mouse */
 }
 
 .href-link i {
-    margin-right: 8px; /* Espaço entre o ícone e o texto */
-    font-size: 24px; /* Tamanho do ícone */
+    margin-right: 8px;
+    /* Espaço entre o ícone e o texto */
+    font-size: 24px;
+    /* Tamanho do ícone */
 }
 
-  .container {
+.container {
     background: transparent;
     padding: 20px;
     text-align: center;
-    
+
 }
 
-  .textosmenu {
+.container h2 {
+    background: transparent;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5rem;
+
+}
+
+.textosmenu {
     font-family: "Lato", sans-serif;
     font-size: 1.2rem;
     max-width: 60ch;
@@ -304,9 +337,9 @@ footer {
     border-radius: 50px;
     overflow: hidden;
     transition: background-color 0.3s, transform 0.3s;
-  }
-  
-  .btn-github::before {
+}
+
+.btn-github::before {
     content: '';
     position: absolute;
     top: 50%;
@@ -317,29 +350,29 @@ footer {
     transition: width 0.4s, height 0.4s, top 0.4s, left 0.4s;
     border-radius: 50%;
     transform: translate(-50%, -50%);
-  }
-  
-  .btn-github:hover::before {
+}
+
+.btn-github:hover::before {
     width: 0;
     height: 0;
     top: 50%;
     left: 50%;
-  }
-  
-  .btn-github:hover {
+}
+
+.btn-github:hover {
     background-color: #333;
     transform: scale(1.05);
-  }
-  
-  .btn-github:active {
+}
+
+.btn-github:active {
     transform: scale(0.95);
-  }
-  
-  .btn-github:focus {
+}
+
+.btn-github:focus {
     outline: none;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-  }
-  
+}
+
 
 
 
@@ -347,9 +380,11 @@ footer {
     0% {
         transform: translateY(0) translateX(0);
     }
+
     50% {
         transform: translateY(-20px) translateX(20px);
     }
+
     100% {
         transform: translateY(0) translateX(0);
     }
